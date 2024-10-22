@@ -4,7 +4,7 @@
 ## To build Docker Dev Container Run the Following Commands
 
 ```bash
-`docker build -f Dev.Dockerfile -t <preferred-image-name> .`
+docker build -f Dev.Dockerfile -t <preferred-image-name> .
 ```
 
 ```bash
