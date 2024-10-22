@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "dungeonmaster"
+version = "0.1.0"
+description = "D&D Bot"
+authors = ["ToluAfo", "BlaiseLabs", "aholliday90"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.10"
+behave = "^1.2.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

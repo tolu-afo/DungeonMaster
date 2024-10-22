@@ -6,21 +6,21 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Update and install necessary packages
 RUN apt-get update && \
-    apt-get install -y \
-    python3.11 \
-    python3-pip \
-    python3-venv \
-    git \
-    curl \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+  apt-get install -y \
+  python3.11 \
+  python3-pip \
+  python3-venv \
+  git \
+  curl \
+  build-essential \
+  && rm -rf /var/lib/apt/lists/*
 
 # Set Python 3.11 as the default
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.11 1
 
 # Install Poetry
 RUN curl -sSL https://install.python-poetry.org | python3 - \
-    && ln -s /root/.local/bin/poetry /usr/local/bin/poetry
+  && ln -s /root/.local/bin/poetry /usr/local/bin/poetry
 
 # Verify Python, pip, and Poetry installation
 RUN python --version && pip --version && poetry --version
@@ -34,9 +34,10 @@ RUN git clone https://github.com/tolu-afo/DungeonMaster.git
 # Change the working directory to the cloned repository
 WORKDIR /app/DungeonMaster
 
-# Initialize Poetry in the project
+# Initialize a new Python project using Poetry
 RUN poetry init -n
 
+# TODO: Make this use the poetry.lock file or pyproject.toml file instead
 # Add behave package using Poetry
 RUN poetry add behave
 
