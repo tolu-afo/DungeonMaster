@@ -34,8 +34,11 @@ RUN git clone https://github.com/tolu-afo/DungeonMaster.git
 # Change the working directory to the cloned repository
 WORKDIR /app/DungeonMaster
 
-RUN poetry init
+# Initialize a new Python project using Poetry
+RUN poetry init -n
 
+# TODO: Make this use the poetry.lock file or pyproject.toml file instead
+# Add behave package using Poetry
 RUN poetry add behave
 
 # Install project dependencies
